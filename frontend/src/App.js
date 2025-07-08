@@ -65,7 +65,7 @@ const Hero = ({ language, setLanguage }) => (
           </div>
         </div>
         <div className="flex items-center space-x-6">
-          <LanguageToggle language={language} setLanguage={() => {}} />
+          <LanguageToggle language={language} setLanguage={setLanguage} />
           <div className="hidden md:flex space-x-8">
             <a href="#certifications" className="text-white hover:text-orange-300 transition-colors font-medium">
               {language === 'fr' ? 'Certifications' : 'Certifications'}
