@@ -412,7 +412,23 @@ const About = ({ language }) => (
 const Products = ({ language }) => (
   <section id="products" className="py-20 bg-white">
     <div className="container mx-auto px-6">
-      {/* ... (le début du composant ne change pas) ... */}
+      <motion.div
+        className="text-center mb-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-5xl font-bold text-gray-900 mb-6">
+          {language === 'fr' ? 'Nos Produits' : 'Our Products'}
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-green-600 mx-auto mb-6"></div>
+        <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          {language === 'fr'
+            ? 'Produits tropicaux frais et premium, directement sourcés des terres fertiles du Sénégal.'
+            : 'Fresh, premium tropical produce sourced directly from Senegal\'s fertile lands.'}
+        </p>
+      </motion.div>
 
       <div className="grid md:grid-cols-3 gap-8">
         {/* Produit Actuel - Gombo */}
@@ -424,8 +440,7 @@ const Products = ({ language }) => (
           viewport={{ once: true }}
         >
           <div className="h-64 bg-cover bg-center" style={{
-            // ▼▼▼ MODIFIEZ CETTE LIGNE POUR LE GOMBO ▼▼▼
-            backgroundImage: `url('/images/gombo.jpg')` 
+            backgroundImage: `url('/images/gombo.jpg')`
           }}>
             <div className="h-full bg-gradient-to-t from-black/50 to-transparent flex items-end">
               <div className="p-6">
@@ -435,17 +450,42 @@ const Products = ({ language }) => (
               </div>
             </div>
           </div>
-          {/* ... (le reste de la carte Gombo ne change pas) ... */}
+          <div className="p-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              {language === 'fr' ? 'Gombo Premium' : 'Premium Gombo'}
+            </h3>
+            <p className="text-gray-600 mb-4">
+              {language === 'fr'
+                ? 'Okra frais et tendre, récolté à maturité optimale. Riche en vitamines et parfait pour les plats traditionnels.'
+                : 'Fresh, tender okra harvested at peak ripeness. Rich in vitamins and perfect for traditional dishes.'}
+            </p>
+            <div className="space-y-2 mb-4">
+              <div className="flex items-center space-x-2 text-green-600 text-sm">
+                <CheckCircle className="w-4 h-4" />
+                <span>{language === 'fr' ? 'Origine Sénégal certifiée' : 'Certified Senegal origin'}</span>
+              </div>
+              <div className="flex items-center space-x-2 text-green-600 text-sm">
+                <CheckCircle className="w-4 h-4" />
+                <span>{language === 'fr' ? 'Livraison UE 7-10 jours' : 'EU delivery 7-10 days'}</span>
+              </div>
+              <div className="flex items-center space-x-2 text-green-600 text-sm">
+                <CheckCircle className="w-4 h-4" />
+                <span>{language === 'fr' ? 'Emballage export professionnel' : 'Professional export packaging'}</span>
+              </div>
+            </div>
+            <button className="w-full bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-700 transition-colors">
+              {language === 'fr' ? 'Demander un Devis' : 'Request Quote'}
+            </button>
+          </div>
         </motion.div>
 
-        {/* Produits à Venir */}
+        {/* Produits à venir */}
         {[
           {
             name: language === 'fr' ? 'Melons Frais' : 'Fresh Melons',
             description: language === 'fr'
               ? 'Melons sucrés et juteux avec une saveur et un arôme exceptionnels.'
               : 'Sweet, juicy melons with exceptional flavor and aroma.',
-            // ▼▼▼ MODIFIEZ CETTE LIGNE POUR LE MELON ▼▼▼
             image: "/images/melon.jpg",
             season: language === 'fr' ? 'Disponible Automne 2024' : 'Available Fall 2024'
           },
@@ -454,7 +494,6 @@ const Products = ({ language }) => (
             description: language === 'fr'
               ? 'Pastèques volumineuses et rafraîchissantes, parfaites pour les climats chauds.'
               : 'Large, refreshing watermelons perfect for hot climates.',
-            // ▼▼▼ MODIFIEZ CETTE LIGNE POUR LA PASTÈQUE ▼▼▼
             image: "/images/pasteque.jpg",
             season: language === 'fr' ? 'Disponible Été 2024' : 'Available Summer 2024'
           }
@@ -470,9 +509,21 @@ const Products = ({ language }) => (
             <div className="h-64 bg-cover bg-center relative" style={{
               backgroundImage: `url('${product.image}')`
             }}>
-              {/* ... (le reste de la carte ne change pas) ... */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div className="absolute bottom-4 left-4">
+                <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  {language === 'fr' ? 'Prochainement' : 'Coming Soon'}
+                </span>
+              </div>
             </div>
-            {/* ... (le reste de la carte ne change pas) ... */}
+            <div className="p-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">{product.name}</h3>
+              <p className="text-gray-600 mb-3">{product.description}</p>
+              <p className="text-orange-600 font-medium text-sm mb-4">{product.season}</p>
+              <button className="w-full bg-orange-600 text-white py-3 rounded-xl font-semibold hover:bg-orange-700 transition-colors">
+                {language === 'fr' ? 'Me Notifier' : 'Notify Me'}
+              </button>
+            </div>
           </motion.div>
         ))}
       </div>
