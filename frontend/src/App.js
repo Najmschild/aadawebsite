@@ -927,7 +927,7 @@ function App() {
 
   return (
     <div className="App">
-      <Hero language={language} />
+      <Hero language={language} setLanguage={setLanguage} />
       <Certifications language={language} />
       <About language={language} />
       <Products language={language} />
