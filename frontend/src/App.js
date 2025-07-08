@@ -36,7 +36,7 @@ const LanguageToggle = ({ language, setLanguage }) => (
   </div>
 );
 
-const Hero = ({ language }) => (
+const Hero = ({ language, setLanguage }) => (
   <section className="relative min-h-screen bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 overflow-hidden">
     <div className="absolute inset-0 bg-black/30"></div>
     <div 
