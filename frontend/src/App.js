@@ -663,7 +663,345 @@ const Clothing = ({ language }) => (
   </section>
 );
 
-const Contact = ({ language }) => (
+const PricingOrderInfo = ({ language }) => (
+  <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50">
+    <div className="container mx-auto px-6">
+      <motion.div
+        className="text-center mb-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-5xl font-bold text-gray-900 mb-6">
+          {language === 'fr' ? 'Tarifs & Commandes' : 'Pricing & Orders'}
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-green-600 mx-auto mb-6"></div>
+        <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          {language === 'fr'
+            ? 'Conditions commerciales transparentes pour les professionnels européens.'
+            : 'Transparent commercial terms for European professionals.'}
+        </p>
+      </motion.div>
+
+      <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <motion.div
+          className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center space-x-3 mb-6">
+            <div className="bg-green-100 p-3 rounded-full">
+              <Package className="w-6 h-6 text-green-600" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900">
+              {language === 'fr' ? 'Informations Produits' : 'Product Information'}
+            </h3>
+          </div>
+          
+          <div className="space-y-6">
+            <div className="border-l-4 border-green-500 pl-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                {language === 'fr' ? 'Gombo Premium' : 'Premium Gombo'}
+              </h4>
+              <div className="space-y-2 text-gray-700">
+                <p><strong>{language === 'fr' ? 'Prix:' : 'Price:'}</strong> €3.20-€3.80/kg</p>
+                <p><strong>{language === 'fr' ? 'Commande min:' : 'Min order:'}</strong> 500kg</p>
+                <p><strong>{language === 'fr' ? 'Emballage:' : 'Packaging:'}</strong> {language === 'fr' ? 'Cartons 10kg' : 'Boxes 10kg'}</p>
+                <p><strong>{language === 'fr' ? 'Saison:' : 'Season:'}</strong> {language === 'fr' ? 'Toute l\'année' : 'Year-round'}</p>
+              </div>
+            </div>
+
+            <div className="border-l-4 border-orange-500 pl-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                {language === 'fr' ? 'Melons (Prochainement)' : 'Melons (Coming Soon)'}
+              </h4>
+              <div className="space-y-2 text-gray-700">
+                <p><strong>{language === 'fr' ? 'Prix estimé:' : 'Estimated price:'}</strong> €2.50-€3.00/kg</p>
+                <p><strong>{language === 'fr' ? 'Commande min:' : 'Min order:'}</strong> 300kg</p>
+                <p><strong>{language === 'fr' ? 'Disponible:' : 'Available:'}</strong> {language === 'fr' ? 'Automne 2024' : 'Fall 2024'}</p>
+              </div>
+            </div>
+
+            <div className="border-l-4 border-red-500 pl-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                {language === 'fr' ? 'Pastèques (Prochainement)' : 'Watermelons (Coming Soon)'}
+              </h4>
+              <div className="space-y-2 text-gray-700">
+                <p><strong>{language === 'fr' ? 'Prix estimé:' : 'Estimated price:'}</strong> €1.80-€2.20/kg</p>
+                <p><strong>{language === 'fr' ? 'Commande min:' : 'Min order:'}</strong> 800kg</p>
+                <p><strong>{language === 'fr' ? 'Disponible:' : 'Available:'}</strong> {language === 'fr' ? 'Été 2024' : 'Summer 2024'}</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center space-x-3 mb-6">
+            <div className="bg-blue-100 p-3 rounded-full">
+              <CreditCard className="w-6 h-6 text-blue-600" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900">
+              {language === 'fr' ? 'Conditions Commerciales' : 'Commercial Terms'}
+            </h3>
+          </div>
+          
+          <div className="space-y-6">
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                {language === 'fr' ? 'Conditions de Paiement' : 'Payment Terms'}
+              </h4>
+              <div className="space-y-2 text-gray-700">
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>{language === 'fr' ? '30% acompte à la commande' : '30% deposit on order'}</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>{language === 'fr' ? '70% avant expédition' : '70% before shipment'}</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>{language === 'fr' ? 'Virement bancaire SEPA' : 'SEPA bank transfer'}</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>{language === 'fr' ? 'Lettre de crédit acceptée' : 'Letter of credit accepted'}</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                {language === 'fr' ? 'Remises Volume' : 'Volume Discounts'}
+              </h4>
+              <div className="space-y-2 text-gray-700">
+                <div className="flex justify-between">
+                  <span>500kg - 1 tonne:</span>
+                  <span className="font-semibold text-green-600">{language === 'fr' ? 'Prix standard' : 'Standard price'}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>1-5 tonnes:</span>
+                  <span className="font-semibold text-green-600">-3%</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>5-10 tonnes:</span>
+                  <span className="font-semibold text-green-600">-5%</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>10+ tonnes:</span>
+                  <span className="font-semibold text-green-600">-8%</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                {language === 'fr' ? 'Livraison' : 'Delivery'}
+              </h4>
+              <div className="space-y-2 text-gray-700">
+                <div className="flex items-center space-x-2">
+                  <Truck className="w-4 h-4 text-blue-500" />
+                  <span>{language === 'fr' ? 'FOB Dakar inclus' : 'FOB Dakar included'}</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Truck className="w-4 h-4 text-blue-500" />
+                  <span>{language === 'fr' ? 'CIF ports UE: +€0.15/kg' : 'CIF EU ports: +€0.15/kg'}</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Clock className="w-4 h-4 text-blue-500" />
+                  <span>{language === 'fr' ? 'Délai: 7-10 jours' : 'Transit: 7-10 days'}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      <motion.div
+        className="bg-gradient-to-r from-orange-500 to-green-600 rounded-2xl p-8 text-white text-center"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h3 className="text-2xl font-bold mb-4">
+          {language === 'fr' ? 'Prêt à Commander ?' : 'Ready to Order?'}
+        </h3>
+        <p className="text-lg mb-6 opacity-90">
+          {language === 'fr'
+            ? 'Contactez-nous pour un devis personnalisé et des échantillons gratuits.'
+            : 'Contact us for a personalized quote and free samples.'}
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button className="bg-white text-orange-600 px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors">
+            {language === 'fr' ? 'Demander un Devis' : 'Request Quote'}
+          </button>
+          <button className="bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-3 rounded-xl font-semibold hover:bg-white/30 transition-colors">
+            {language === 'fr' ? 'Commander Échantillons' : 'Order Samples'}
+          </button>
+        </div>
+      </motion.div>
+    </div>
+  </section>
+);
+
+const FAQ = ({ language }) => {
+  const [openFAQ, setOpenFAQ] = useState(null);
+
+  const faqs = [
+    {
+      question: language === 'fr' ? 'Quelle est la fraîcheur garantie de vos produits ?' : 'What is the guaranteed freshness of your products?',
+      answer: language === 'fr' 
+        ? 'Nos produits sont récoltés et expédiés dans les 48h. Grâce à notre chaîne du froid, ils arrivent en Europe avec une fraîcheur optimale de 8-12 jours après récolte.'
+        : 'Our products are harvested and shipped within 48h. Thanks to our cold chain, they arrive in Europe with optimal freshness of 8-12 days after harvest.'
+    },
+    {
+      question: language === 'fr' ? 'Quels sont vos délais de livraison vers l\'Europe ?' : 'What are your delivery times to Europe?',
+      answer: language === 'fr'
+        ? 'Délai standard de 7-10 jours par transport maritime réfrigéré. Expédition express aérienne disponible en 2-3 jours (supplément +€2.50/kg).'
+        : 'Standard 7-10 days by refrigerated sea transport. Express air shipping available in 2-3 days (surcharge +€2.50/kg).'
+    },
+    {
+      question: language === 'fr' ? 'Proposez-vous des échantillons avant commande ?' : 'Do you offer samples before ordering?',
+      answer: language === 'fr'
+        ? 'Oui, nous envoyons des échantillons gratuits (2-5kg) pour tous nos produits. Frais de transport à la charge du client (environ €25-35 par express).'
+        : 'Yes, we send free samples (2-5kg) for all our products. Shipping costs borne by customer (approximately €25-35 by express).'
+    },
+    {
+      question: language === 'fr' ? 'Quelles certifications possédez-vous ?' : 'What certifications do you have?',
+      answer: language === 'fr'
+        ? 'Nous avons le numéro REX (SN-REX-2024-001), certification Origine Sénégal, NINE (SN-NINE-2024-0001), et nos vêtements sont certifiés OEKO-TEX® et Masters of FLAX FIBRE™.'
+        : 'We have REX number (SN-REX-2024-001), Senegal Origin certification, NINE (SN-NINE-2024-0001), and our clothing is certified OEKO-TEX® and Masters of FLAX FIBRE™.'
+    },
+    {
+      question: language === 'fr' ? 'Comment gérez-vous le contrôle qualité ?' : 'How do you manage quality control?',
+      answer: language === 'fr'
+        ? 'Inspection à 3 niveaux : contrôle à la récolte, vérification avant emballage, et inspection finale avant expédition. Photos de qualité envoyées avant chaque expédition.'
+        : '3-level inspection: harvest control, pre-packaging verification, and final inspection before shipment. Quality photos sent before each shipment.'
+    },
+    {
+      question: language === 'fr' ? 'Acceptez-vous les paiements européens ?' : 'Do you accept European payments?',
+      answer: language === 'fr'
+        ? 'Oui, nous acceptons les virements SEPA, lettres de crédit, et avons un compte bancaire en euros. Conditions: 30% acompte, 70% avant expédition.'
+        : 'Yes, we accept SEPA transfers, letters of credit, and have a euro bank account. Terms: 30% deposit, 70% before shipment.'
+    },
+    {
+      question: language === 'fr' ? 'Que se passe-t-il en cas de problème de livraison ?' : 'What happens in case of delivery problems?',
+      answer: language === 'fr'
+        ? 'Nous avons une assurance transport complète et garantissons le remplacement ou remboursement intégral en cas de problème. Service client réactif en moins de 24h.'
+        : 'We have comprehensive transport insurance and guarantee full replacement or refund in case of problems. Responsive customer service within 24h.'
+    },
+    {
+      question: language === 'fr' ? 'Proposez-vous des contrats saisonniers ?' : 'Do you offer seasonal contracts?',
+      answer: language === 'fr'
+        ? 'Oui, nous proposons des contrats annuels avec prix fixes, priorité d\'approvisionnement, et conditions préférentielles. Idéal pour les distributeurs réguliers.'
+        : 'Yes, we offer annual contracts with fixed prices, supply priority, and preferential terms. Ideal for regular distributors.'
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-6">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-5xl font-bold text-gray-900 mb-6">
+            {language === 'fr' ? 'Questions Fréquentes' : 'Frequently Asked Questions'}
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-green-600 mx-auto mb-6"></div>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            {language === 'fr'
+              ? 'Réponses aux questions les plus courantes de nos clients européens.'
+              : 'Answers to the most common questions from our European customers.'}
+          </p>
+        </motion.div>
+
+        <div className="max-w-4xl mx-auto">
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <button
+                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-100 transition-colors"
+                  onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                    {faq.question}
+                  </h3>
+                  <ChevronDown 
+                    className={`w-5 h-5 text-gray-500 transition-transform ${
+                      openFAQ === index ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                
+                {openFAQ === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="px-6 pb-4"
+                  >
+                    <div className="border-t border-gray-200 pt-4">
+                      <p className="text-gray-700 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <motion.div
+          className="mt-12 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-gradient-to-r from-green-50 to-orange-50 rounded-2xl p-8 inline-block">
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <AlertCircle className="w-6 h-6 text-orange-600" />
+              <h3 className="text-xl font-semibold text-gray-900">
+                {language === 'fr' ? 'Autre Question ?' : 'Other Question?'}
+              </h3>
+            </div>
+            <p className="text-gray-700 mb-4">
+              {language === 'fr'
+                ? 'Notre équipe répond à toutes vos questions sous 24h.'
+                : 'Our team answers all your questions within 24h.'}
+            </p>
+            <button className="bg-gradient-to-r from-orange-500 to-green-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-orange-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+              {language === 'fr' ? 'Nous Contacter' : 'Contact Us'}
+            </button>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
   <section id="contact" className="py-20 bg-gradient-to-br from-green-900 to-green-800">
     <div className="container mx-auto px-6">
       <motion.div
