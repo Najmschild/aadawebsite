@@ -1270,6 +1270,7 @@ function App() {
       <About language={language} />
       <Products language={language} />
       <Clothing language={language} />
+      <PricingOrderInfo language={language} />
       <Contact language={language} />
       <Footer language={language} />
     </div>
