@@ -3,7 +3,7 @@ import "./App.css";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Star, ChevronRight, Leaf, Globe, Award, ArrowRight, Shield, Users, Truck, FileText, CheckCircle, Languages, Euro, Clock, ChevronDown, Package, CreditCard, Calendar, AlertCircle } from "lucide-react";
 
-const AADA_LOGO = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8IS0tIFNpbXBsaWZpZWQgQUFEQSBsb2dvIGJhc2VkIG9uIHRoZSBwcm92aWRlZCBkZXNpZ24gLS0+CiAgPGc+CiAgICA8IS0tIEh1dCBzdHJ1Y3R1cmUgLS0+CiAgICA8cGF0aCBkPSJNNTAgNjBMIDIwIDM0TCA4MCAzNFoiIGZpbGw9IiNEOTc5NDIiLz4KICAgIDxwYXRoIGQ9Ik0yMCAzNEwgMjUgMjBMIDc1IDIwTCA4MCAzNFoiIGZpbGw9IiNBMzQzMzYiLz4KICAgIDxwYXRoIGQ9Ik0yNSA1MEwgNzUgNTBMIDgwIDM0TCAyMCAzNFoiIGZpbGw9IiMyMjc3NDQiLz4KICAgIDx0ZXh0IHg9IjEwMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMyMjc3NDQiPmFkYTwvdGV4dD4KICA8L2c+Cjwvc3ZnPg==";
+const AADA_LOGO = '/images/aada.png';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -440,7 +440,7 @@ const Products = ({ language }) => (
           viewport={{ once: true }}
         >
           <div className="h-64 bg-cover bg-center" style={{
-            backgroundImage: `url('/images/gombo.jpg')`
+            backgroundImage: `url('/images/gombo.png')`
           }}>
             <div className="h-full bg-gradient-to-t from-black/50 to-transparent flex items-end">
               <div className="p-6">
@@ -486,7 +486,7 @@ const Products = ({ language }) => (
             description: language === 'fr'
               ? 'Melons sucrés et juteux avec une saveur et un arôme exceptionnels.'
               : 'Sweet, juicy melons with exceptional flavor and aroma.',
-            image: "/images/melon.jpg",
+            image: "/images/melon.png",
             season: language === 'fr' ? 'Disponible Automne 2024' : 'Available Fall 2024'
           },
           {
@@ -494,7 +494,7 @@ const Products = ({ language }) => (
             description: language === 'fr'
               ? 'Pastèques volumineuses et rafraîchissantes, parfaites pour les climats chauds.'
               : 'Large, refreshing watermelons perfect for hot climates.',
-            image: "/images/pasteque.jpg",
+            image: "/images/pasteque.png",
             season: language === 'fr' ? 'Disponible Été 2024' : 'Available Summer 2024'
           }
         ].map((product, index) => (
