@@ -1002,6 +1002,8 @@ const FAQ = ({ language }) => {
     </section>
   );
 };
+
+const Contact = ({ language }) => (
   <section id="contact" className="py-20 bg-gradient-to-br from-green-900 to-green-800">
     <div className="container mx-auto px-6">
       <motion.div
@@ -1271,6 +1273,7 @@ function App() {
       <Products language={language} />
       <Clothing language={language} />
       <PricingOrderInfo language={language} />
+      <FAQ language={language} />
       <Contact language={language} />
       <Footer language={language} />
     </div>
